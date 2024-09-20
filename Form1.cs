@@ -25,9 +25,11 @@ namespace OOP_Lab4_1
 
             for (int i = 0; i < genMass.Length; i++)
             {
-                genMass[i] = randValue.Next(1, 50);
+                genMass[i] = randValue.Next(-30, 50);
             }
-            
+
+            Array.Sort(genMass, (x, y) => (x >= 0 ? 1 : 0).CompareTo(y >= 0 ? 1 : 0));
+
             textBox4.Text = string.Join(" ", genMass);
 
             List<int> evenMass = new List<int> { };
